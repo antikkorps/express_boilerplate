@@ -13,7 +13,7 @@ Basic conf for an express server with prisma and docker and a postgresql databas
 docker compose up -d
 ```
 
-3.  run
+3. run
 
 ```bash
 npx prisma db push
