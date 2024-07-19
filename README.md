@@ -2,7 +2,7 @@
 
 ## Description
 
-Basic conf for an express server with prisma and docker and a postgresql database
+Basic conf for an express server with prisma and docker and a postgresql database, using typescript.
 
 ## Installation Instructions
 
