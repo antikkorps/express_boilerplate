@@ -18,3 +18,9 @@ docker compose up -d
 ```bash
 npx prisma db push
 ```
+
+## generate a secret key
+
+```bash
+openssl rand -base64 24
+```
