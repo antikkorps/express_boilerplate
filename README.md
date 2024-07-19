@@ -1,8 +1,8 @@
-# myPlanning
+# Express Boilerplate
 
 ## Description
 
-This is a family management tool in order to ease life. You can create tasks, add notifications, and furthermore to manage your family life.
+Basic conf for an express server with prisma and docker and a postgresql database
 
 ## Installation Instructions
 
@@ -13,7 +13,7 @@ This is a family management tool in order to ease life. You can create tasks, ad
 docker compose up -d
 ```
 
-3. run
+3.  run
 
 ```bash
 npx prisma db push
