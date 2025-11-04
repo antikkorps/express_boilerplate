@@ -77,10 +77,7 @@ export const logout = asyncHandler(
 
 export const getCurrentUser = asyncHandler(
   async (req: Request, res: Response, next: NextFunction) => {
-    if (!req.isAuthenticated()) {
-      throw new AppError("Not authenticated", 401);
-    }
-
+    // Authentication is handled by isAuthenticated middleware
     const user = req.user as any;
 
     // Remove password from response

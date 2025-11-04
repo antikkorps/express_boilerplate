@@ -5,6 +5,7 @@ import {
   validateLogin,
   handleValidationErrors,
 } from "../middlewares/validators";
+import { isAuthenticated } from "../middlewares/authMiddlewares";
 
 const router = Router();
 
@@ -22,8 +23,8 @@ router.post(
   login,
 );
 
-router.post("/logout", logout);
+router.post("/logout", isAuthenticated, logout);
 
-router.get("/me", getCurrentUser);
+router.get("/me", isAuthenticated, getCurrentUser);
 
 export default router;
