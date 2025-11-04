@@ -1,7 +1,11 @@
-import prisma from "../prisma/client";
+import { User } from "./User.model";
 
 export const findUserByEmail = async (email: string) => {
-  return await prisma.user.findUnique({ where: { email } });
+  return await User.findOne({ where: { email } });
+};
+
+export const findUserById = async (id: unknown) => {
+  return await User.findByPk(id as string);
 };
 
 export const createUser = async (
@@ -9,7 +13,5 @@ export const createUser = async (
   password: string,
   name: string,
 ) => {
-  return await prisma.user.create({
-    data: { email, password, name },
-  });
+  return await User.create({ email, password, name });
 };
