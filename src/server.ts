@@ -1,23 +1,20 @@
 import "reflect-metadata";
 import app from "./app";
-import sequelize from "./config/database";
+import { connectDatabase } from "./config/database";
 
 const PORT = process.env.PORT || 3000;
 
 const startServer = async () => {
   try {
-    await sequelize.authenticate();
-    console.log("Database connection established successfully.");
+    // Connect to database
+    await connectDatabase();
 
-    // Sync models with database (use { force: true } to drop and recreate tables)
-    await sequelize.sync();
-    console.log("Database models synchronized.");
-
+    // Start server
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`);
     });
   } catch (error) {
-    console.error("Unable to connect to the database:", error);
+    console.error("Failed to start server:", error);
     process.exit(1);
   }
 };
